@@ -1,5 +1,13 @@
-import Greeting from './components/Greeting';
-import './App.css';
+import Greeting from "./components/Greeting";
+import StudentInfo from "./components/StudentInfo";
+import "./App.css";
+
+const student1 = {
+  firstName: "Gisselle",
+  lastName: "Pombar",
+  email: "gigi@bocacode.com",
+  age: 26,
+};
 
 function App() {
   return (
@@ -7,8 +15,16 @@ function App() {
       <header className="App-header">
         <h1>This is Props!</h1>
         <Greeting name="Gisselle" lastName="Pombar" emoji="🤗" />
-        <Greeting name="Gisele" lastName="Abzalov" emoji="😘" />
-        <Greeting name="Idan" lastName="Fisher" />
+        <StudentInfo student={student1} />
+        <Greeting name="Idan" lastName="Fischer" />
+        <StudentInfo
+          student={{
+            firstName: "Idan",
+            lastName: "Fisher",
+            age: 18,
+            email: "idan@bocacode.com",
+          }}
+        />
       </header>
     </div>
   );
